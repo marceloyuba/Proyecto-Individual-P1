@@ -1,1 +1,10 @@
-fastapi[all]
+fastapi
+numpy
+pandas
+uvicorn
+scikit-learn
+dask
+python-multipart
+parquet
+pyarrow
+fastparquet
