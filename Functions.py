@@ -5,24 +5,72 @@ import numpy as np
 import gzip
 import json
 
+def presentacion():
+    '''
+    Genera una página de presentación HTML para la API Steam de consultas de videojuegos.
+    
+    Returns:
+    str: Código HTML que muestra la página de presentación.
+    '''
+    return '''
+    <html>
+        <head>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+            <title>API Steam</title>
+            <style>
+                body {
+                    background-color:#000000 ;
+                    font-family: "Nunito", sans-serif;
+                    padding: 20px;
+                }
+                h1 {
+                    color: #ffffff;
+                    text-align: center;
+                }
+                p {
+                    color: #ffffff;
+                    text-align: center;
+                    font-size: 18px;
+                    margin-top: 20px;
+                }
+                
+            </style>
+        </head>
+        <body>
+            <p align='center'>
+            <img src ="https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png" style="display: inline-block;">
+            <p>
+            <h1>API de consultas de videojuegos de la plataforma Steam</h1>
+            <p>API de Steam donde se pueden hacer diferentes consultas sobre Endpoints de la plataforma de videojuegos.</p>
+            <br>
+            <p>Haciendo click en la imagen debajo <br> <a href="https://marcelo-yuba-pi1.onrender.com/docs"><img alt="LinkedIn" src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" style="display: inline-block; width: 200px;"></a><br> Ingresa a la api</p>
+            <br>
+            <p> El desarrollo de este proyecto esta en <a href="https://github.com/marceloyuba/Proyecto-Individual-P1"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-black?style=flat-square&logo=github"></a></p>
+            
+        </body>
+    </html>
+    '''
+
 def Developer(desarrollador):
     df_games = pd.read_parquet('developer.parquet')
     # Filtra el dataframe por desarrollador de interés
     data_filtrada = df_games[df_games['publisher'] == desarrollador]
     # Calcula la cantidad de items por año
-    cantidad_por_año = data_filtrada.groupby('release_date')['item_id'].count()
+    cantidad_por_año = data_filtrada.groupby(data_filtrada['release_date'].dt.year)['item_id'].count()
     # Calcula la cantidad de elementos gratis por año
-    cantidad_gratis_por_año = data_filtrada[data_filtrada['price'] == 0.0].groupby('release_date')['item_id'].count()
+    cantidad_gratis_por_año = data_filtrada[data_filtrada['price'] == 0].groupby(data_filtrada['release_date'].dt.year)['item_id'].count()
     # Calcula el porcentaje de elementos gratis por año
-    porcentaje_gratis_por_año = (cantidad_gratis_por_año.mean() / cantidad_por_año * 100).fillna(0).astype(int)
+    porcentaje_gratis_por_año = (cantidad_gratis_por_año.all() / cantidad_por_año * 100).fillna(0).astype(int)
     
-    # Formatea los timestamps en el resultado
-    cantidad_por_año_formatted = {timestamp.strftime('%Y'): count for timestamp, count in cantidad_por_año.items()}
-    porcentaje_gratis_por_año_formatted = {timestamp.strftime('%Y'): count for timestamp, count in porcentaje_gratis_por_año.items()}
-
+    # Formatea los años en el resultado
+    cantidad_por_año_formatted = {year: count for year, count in cantidad_por_año.items()}
+    porcentaje_gratis_por_año_formatted = {year: f"{value}%" for year, value in porcentaje_gratis_por_año.items()}
+    
     result_dict = {
         'Cantidad por año': f"{cantidad_por_año_formatted}",
-        'Porcentaje gratis por año': f"{porcentaje_gratis_por_año_formatted}%"
+        'Porcentaje gratis por año': f"{porcentaje_gratis_por_año_formatted}"
     }
     
     return result_dict
@@ -33,7 +81,7 @@ def UserData(User_id):
     user_data = df_merged[df_merged['user_id'] == User_id]
 
     # Calcular la cantidad de dinero gastado por el usuario
-    total_spent = (user_data['playtime_forever'] * user_data['price']).sum()
+    total_spent = (user_data['price']).sum()
 
     # Calcular el porcentaje de recomendación en base a reviews.recommend
     recommend_percentage = df_merged[df_merged['user_id'] == User_id]['recommend'].mean() * 100
@@ -44,7 +92,7 @@ def UserData(User_id):
     # Construir el Resultado en el Formato Especificado
     resultado = {
         "Usuario": User_id,
-        "Dinero gastado": f"{total_spent:.2f} USD",
+        "Dinero gastado": f"{total_spent:.2f} AUD",
         "porcentaje de recomendación": f"{recommend_percentage:.2f}%",
         "Cantidad de items": num_items
     }
@@ -153,7 +201,8 @@ def cargar_datos_de_entrenamiento(ruta_archivo):
 def recomendacion_usuario(id_de_usuario, n=6):
     
     sim_matrix_train, ratings_train, user_id_mapping, item_id_mapping, df, output = cargar_datos_de_entrenamiento('datos_entrenamiento.pkl.gz')
-
+    # Find the corresponding user_id_numeric using the mapping
+    # Find the corresponding user_id_numeric using the mapping
     user_id_num = user_id_mapping.get(id_de_usuario, None)
 
     # Obtén la fila correspondiente al usuario en la matriz de similitud
@@ -207,7 +256,7 @@ def recomendacion_usuario(id_de_usuario, n=6):
     merged_df = pd.merge(valores_correspondientes, output[['item_id', 'app_name', 'genres']], on='item_id', how='inner')
 
     # Muestra los resultados
-    selected_columns = merged_df[['app_name','genres']]
+    selected_columns = merged_df[['item_id', 'app_name','genres']]
     cadena_json = selected_columns.to_json(orient='records', indent=2)
     json_string_sin_saltos = cadena_json.replace('\n', '')
     return (json_string_sin_saltos)

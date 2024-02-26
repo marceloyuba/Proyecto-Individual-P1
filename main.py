@@ -1,12 +1,24 @@
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI
 import Functions
 from Functions import *
-
+from fastapi.responses import HTMLResponse
 
 #http://127.0.0.1:8000
 #https://fastapi-app-vf4c.onrender.com
 
 app = FastAPI()
+
+@app.get(path="/", 
+         response_class=HTMLResponse,
+         tags=["Home"])
+def home():
+    '''
+    Página de inicio que muestra una presentación.
+
+    Returns:
+    HTMLResponse: Respuesta HTML que muestra la presentación.
+    '''
+    return presentacion()
 
 @app.get(path='/developer',
           description=""" 
@@ -25,8 +37,8 @@ app = FastAPI()
     """,
          tags=["Consultas Developer"])
 
-def Developer(desarrollador):
-    resultadodeveloper = Functions.Developer(desarrollador)
+def Developer(Desarrollador):
+    resultadodeveloper = Functions.Developer(Desarrollador)
     return resultadodeveloper
 developer = Developer('Valve')
 print(developer)
@@ -68,8 +80,8 @@ User_id = UserData('BrainsAccount')
     </html>
     """,
          tags=["Consultas User For Genre"])
-def UserForGenre(genero_especificado):
-    resultadoReview = Functions.UserForGenre(genero_especificado)
+def UserForGenre(Genero_Especificado):
+    resultadoReview = Functions.UserForGenre(Genero_Especificado)
     return resultadoReview
 ufg = UserForGenre('Strategy')
 
@@ -90,8 +102,8 @@ ufg = UserForGenre('Strategy')
     </html>
     """,
          tags=["Consultas Best Developer Year"])
-def best_developer_year(año):
-    resultadoReview = Functions.best_developer_year(año)
+def best_developer_year(Año):
+    resultadoReview = Functions.best_developer_year(Año)
     return resultadoReview
 
 años = best_developer_year(2005)
@@ -115,12 +127,12 @@ print(años)
     </html>
     """,
          tags=["Consultas Developer Reviews Analysis"])
-def developer_reviews_analysis(desarrolladora):
-    resultadoReview = Functions.developer_reviews_analysis(desarrolladora)
+def developer_reviews_analysis(Desarrolladora):
+    resultadoReview = Functions.developer_reviews_analysis(Desarrolladora)
     return resultadoReview
 dra = developer_reviews_analysis('Valve')
 
-@app.get(path = '/Recomendacion',
+@app.get(path = '/top_game',
           description=""" 
     <html>
         <body>
@@ -129,14 +141,14 @@ dra = developer_reviews_analysis('Valve')
                 1. Haga clic en "Try it out".<br>
                 2. Ingrese el usuario en el cuadro de abajo.<br>
                 3. Observe el dinero gastado por el usuario, el porcentaje de recomendación y la cantidad de items que tiene el mismo.<br>
-                4. Sugerencia de usuarios: obscenedagger, rrbr, howsitgoinaz, halofan360, mailiam123, neochuah94, fui312<br>
+                4. Sugerencia de usuarios: BrainsAccount, 76561197970982479, UTNerd24, AVATAR715, tarjla.<br>
                 5. Para cambiar de usuario, copie y pegue de las sugerencias y presione Execute nuevamente.
             </h3>         
         </body>
     </html>
     """,
          tags=["Recomendacion"])
-def recomendacion_usuario(id_de_usuario):
-    resultadotop_game = Functions.recomendacion_usuario(id_de_usuario)
+def recomendacion_usuario(Id_Usuario):
+    resultadotop_game = Functions.recomendacion_usuario(Id_Usuario)
     return resultadotop_game
-dra = recomendacion_usuario('obscenedagger')
+dra = recomendacion_usuario('BrainsAccount')
