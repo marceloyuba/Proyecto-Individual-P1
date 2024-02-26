@@ -12,12 +12,6 @@ app = FastAPI()
          response_class=HTMLResponse,
          tags=["Home"])
 def home():
-    '''
-    Página de inicio que muestra una presentación.
-
-    Returns:
-    HTMLResponse: Respuesta HTML que muestra la presentación.
-    '''
     return presentacion()
 
 @app.get(path='/developer',
@@ -141,7 +135,7 @@ dra = developer_reviews_analysis('Valve')
                 1. Haga clic en "Try it out".<br>
                 2. Ingrese el usuario en el cuadro de abajo.<br>
                 3. Observe el dinero gastado por el usuario, el porcentaje de recomendación y la cantidad de items que tiene el mismo.<br>
-                4. Sugerencia de usuarios: BrainsAccount, 76561197970982479, UTNerd24, AVATAR715, tarjla.<br>
+                4. Sugerencia de usuarios: fui312, mailiam123, ScoutCounterAttack, halofan360, tarjla.<br>
                 5. Para cambiar de usuario, copie y pegue de las sugerencias y presione Execute nuevamente.
             </h3>         
         </body>

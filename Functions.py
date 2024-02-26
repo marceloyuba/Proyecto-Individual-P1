@@ -15,6 +15,7 @@ def presentacion():
     return '''
     <html>
         <head>
+            <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
@@ -42,7 +43,7 @@ def presentacion():
             <p align='center'>
             <img src ="https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png" style="display: inline-block;">
             <p>
-            <h1>API de consultas de videojuegos de la plataforma Steam</h1>
+            <h1>Deploy Render API de consultas de la plataforma de juegos Steam</h1>
             <p>API de Steam donde se pueden hacer diferentes consultas sobre Endpoints de la plataforma de videojuegos.</p>
             <br>
             <p>Haciendo click en la imagen debajo <br> <a href="https://marcelo-yuba-pi1.onrender.com/docs"><img alt="LinkedIn" src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" style="display: inline-block; width: 200px;"></a><br> Ingresa a la api</p>
