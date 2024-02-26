@@ -151,4 +151,4 @@ dra = developer_reviews_analysis('Valve')
 def recomendacion_usuario(Id_Usuario):
     resultadotop_game = Functions.recomendacion_usuario(Id_Usuario)
     return resultadotop_game
-dra = recomendacion_usuario('BrainsAccount')
+dra = recomendacion_usuario('fui312')
