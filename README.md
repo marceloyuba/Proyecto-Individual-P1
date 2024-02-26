@@ -3,16 +3,17 @@
 <img src ="scr\HenryLogo.jpg">
 <p>
 
-
+<p style="text-align: left; border: none;">
 <h2 style="text-align: center; border: none;">
  Proyecto integrador de Machine Learning y Endpoint en Fastapi
 </h2>
-<p align='center'>
+</p>
+<p style="text-align: left; border: none;">
  <h3 style="text-align: center; border: none;">
     Alumno Marcelo Yuba
 </h3>
 </p>
-<p align='center'>
+<p style="text-align: left; border: none;">
 <h2 style="text-align: center; border: none;">
  <b>Analisis de Dataset Steam Australia </b>
 </h2>
