@@ -8,3 +8,4 @@ python-multipart
 parquet
 pyarrow
 fastparquet
+fastapi.responses
