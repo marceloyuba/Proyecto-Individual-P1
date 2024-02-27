@@ -254,7 +254,7 @@ def recomendacion_usuario(id_de_usuario, n=6):
     merged_df = pd.merge(valores_correspondientes, output[['item_id', 'app_name', 'genres']], on='item_id', how='inner')
 
     # Muestra los resultados
-    selected_columns = merged_df[['item_id', 'app_name','genres']]
-    cadena_json = selected_columns.to_json(orient='records', indent=2)
-    json_string_sin_saltos = cadena_json.replace('\n', '')
-    return (json_string_sin_saltos)
+    selected_columns = merged_df[['item_id', 'app_name', 'genres']]
+    json_data = selected_columns.to_dict(orient='records')
+    return json_data
+    
