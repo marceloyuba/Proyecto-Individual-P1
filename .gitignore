@@ -111,4 +111,3 @@ venv.bak/
 output.parquet 
 user_items.parquet
 user_reviews.parquet
-modelo.parquet
