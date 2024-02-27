@@ -106,3 +106,9 @@ venv.bak/
 
 # Mac OS
 .DS_Store
+
+#parquest originales
+output.parquet 
+user_items.parquet
+user_reviews.parquet
+modelo.parquet

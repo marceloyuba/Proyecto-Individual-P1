@@ -6,12 +6,9 @@ import gzip
 import json
 
 def presentacion():
-    '''
-    Genera una página de presentación HTML para la API Steam de consultas de videojuegos.
     
-    Returns:
-    str: Código HTML que muestra la página de presentación.
-    '''
+    #Genera una página de presentación HTML para la API Steam de consultas de videojuegos.
+    
     return '''
     <html>
         <head>
@@ -55,7 +52,7 @@ def presentacion():
     '''
 
 def Developer(desarrollador):
-    df_games = pd.read_parquet('developer.parquet')
+    df_games = pd.read_parquet('data/developer.parquet')
     # Filtra el dataframe por desarrollador de interés
     data_filtrada = df_games[df_games['publisher'] == desarrollador]
     # Calcula la cantidad de items por año
@@ -77,7 +74,7 @@ def Developer(desarrollador):
     return result_dict
 
 def UserData(User_id):
-    df_merged = pd.read_parquet('df_merge.parquet')
+    df_merged = pd.read_parquet('data/df_merge.parquet')
     
     user_data = df_merged[df_merged['user_id'] == User_id]
 
@@ -102,7 +99,7 @@ def UserData(User_id):
 def UserForGenre(genero):
 
     """The user_for_genre function takes a language (string) as input, validates its format, and returns a dictionary. The dictionary contains the highest accumulated playtime for the given genre. If the year it's not valid, it will throw an error."""
-    ufg = pd.read_parquet('df_merge.parquet')
+    ufg = pd.read_parquet('data/df_merge.parquet')
     genero = genero.lower()
     genero = genero.capitalize()
     ufg['release_date'] = pd.to_datetime(ufg['release_date'], errors='coerce')
@@ -139,7 +136,7 @@ def UserForGenre(genero):
 
 def best_developer_year(anio):
     # Cargar el DataFrame desde el archivo parquet
-    df_merged = pd.read_parquet('df_merge.parquet')
+    df_merged = pd.read_parquet('data/df_merge.parquet')
     
     # Convertir 'item_id' a object en ambos DataFrames
     df_merged['Sentiment_analysis'] = df_merged['Sentiment_analysis'].astype('int')
@@ -170,7 +167,7 @@ def best_developer_year(anio):
 def developer_reviews_analysis(desarrolladora):
     # Cargar los DataFrames
     
-    df_merged = pd.read_parquet('df_merge.parquet')
+    df_merged = pd.read_parquet('data/df_merge.parquet')
  
     
     # Convertir 'item_id' a object en ambos DataFrames
@@ -201,7 +198,7 @@ def cargar_datos_de_entrenamiento(ruta_archivo):
 
 def recomendacion_usuario(id_de_usuario, n=6):
     
-    sim_matrix_train, ratings_train, user_id_mapping, item_id_mapping, df, output = cargar_datos_de_entrenamiento('datos_entrenamiento.pkl.gz')
+    sim_matrix_train, ratings_train, user_id_mapping, item_id_mapping, df, output = cargar_datos_de_entrenamiento('data/datos_entrenamiento.pkl.gz')
     # Find the corresponding user_id_numeric using the mapping
     # Find the corresponding user_id_numeric using the mapping
     user_id_num = user_id_mapping.get(id_de_usuario, None)
