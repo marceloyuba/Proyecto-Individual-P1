@@ -61,11 +61,6 @@ Para lograr los analisis, tomamos las columnas pertinentes que sean necesarias p
  <h2 style="text-align: Left; border: none;">
     Segundo Paso
 </h2>
-<h1>Creamos las funciones y el modelo de entrenamiento</h1>
-
- <h2 style="text-align: Left; border: none;">
-    Tercer Paso
-</h2>
 <h1>Creamos un entorno virtual en FastApi</h1>
 <h4>La aplicacion para el deploy elegida es FastApi, donde primero en un entorno virtual local, hacemos las comprobaciones de que las funciones ejecuten de manera correcta</h4><br>
 </p>
@@ -97,7 +92,7 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 </p>
 
  <h2 style="text-align: Left; border: none;">
-    Cuarto Paso
+    Tercer Paso
 </h2>
 <p>
 <h1>Creamos un web service en Render</h1>
@@ -114,8 +109,17 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 <p align='center'>
 <img src ="scr\home.jpg" style="width: 60%;">
 </p>
+<h4>La metodologia de uso es la misma que en el deploy local, dentro de cada endpoint hay instrucciones de como usar cada uno y una lista de sugerencias para probarlos.</h4><br>
+<p align='center'>
+<img src ="scr\consultas.jpg" style="width: 60%;">
+</p>
+
  <h2 style="text-align: Left; border: none;">
-    Quinto Paso
+    Cuarto Paso
 </h2>
 <p>
 <h1>Creamos un video explicando el funcionamiento del deploy y el proyecto en si</h1>
+<p align='center'>
+<a href="https://drive.google.com/drive/folders/11dskMeZRd7JQwkoNWF0th1oVGVPE9L4B?usp=drive_link"><img alt="Fastapi" src="https://logowik.com/content/uploads/images/google-drive-new9328.logowik.com.webp" style="display: inline-block; width: 300px;"></a>
+</p>
+<p align='center'>Click en la imagen para ir al drive del video</p>
