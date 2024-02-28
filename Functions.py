@@ -45,8 +45,9 @@ def presentacion():
             <br>
             <p>Haciendo click en la imagen debajo <br> <a href="https://marcelo-yuba-pi1.onrender.com/docs"><img alt="LinkedIn" src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" style="display: inline-block; width: 200px;"></a><br> Ingresa a la api</p>
             <br>
-            <p> El desarrollo de este proyecto esta en <a href="https://github.com/marceloyuba/Proyecto-Individual-P1"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-black?style=flat-square&logo=github"></a></p>
-            
+            <p> El desarrollo de este proyecto esta en</p>
+            <p><a href="https://github.com/marceloyuba/Proyecto-Individual-P1"><img alt="GitHub" src="https://static-00.iconduck.com/assets.00/github-icon-2048x1988-jzvzcf2t.png" style=" width: 120px"></a></p>
+            <p align='center'>GitHub</p>
         </body>
     </html>
     '''
@@ -144,10 +145,8 @@ def best_developer_year(anio):
     
     df_merged['recommend'] = df_merged['recommend'].astype(bool)
     
-    df_merged['release_date'] = pd.to_datetime(df_merged['release_date'], errors='coerce')
-
     # Filtrar por el año dado
-    df_filtered = df_merged[df_merged['release_date'].dt.year == anio]
+    df_filtered = df_merged[df_merged['Años'] == anio]
 
     # Filtrar por reviews positivas y recomendadas
     df_filtered = df_filtered[(df_filtered['recommend'] == True) & (df_filtered['Sentiment_analysis'] == 2)]
@@ -251,10 +250,10 @@ def recomendacion_usuario(id_de_usuario, n=6):
     # Eliminar duplicados basados en 'item_id_numeric'
     valores_correspondientes = valores_correspondientes.drop_duplicates(subset='item_id_numeric')
     
-    merged_df = pd.merge(valores_correspondientes, output[['item_id', 'app_name', 'genres']], on='item_id', how='inner')
+    merged_df = pd.merge(valores_correspondientes, output[['item_id', 'app_name', 'genres', 'price']], on='item_id', how='inner')
 
     # Muestra los resultados
-    selected_columns = merged_df[['item_id', 'app_name', 'genres']]
+    selected_columns = merged_df[['item_id', 'app_name', 'genres', 'price']]
+    selected_columns = selected_columns.rename(columns={'item_id': 'Item', 'app_name': 'AppName', 'genres': 'Genres', 'price': 'Price'})
     json_data = selected_columns.to_dict(orient='records')
     return json_data
-    

@@ -111,3 +111,4 @@ venv.bak/
 output.parquet 
 user_items.parquet
 user_reviews.parquet
+data/df_merge

@@ -36,7 +36,7 @@ Vamos a desarrollar este informe en los <b>4 pasos mas importantes del desarroll
 <p align='center'>
 <img src ="scr\archivos.jpg">
 <p>
-<h3 style="text-align: left; border: none;">Se toman los 3 archivos JSON que nos fueron provistos, devido al tamaño y la complejidad de estos, lo siguiente fue convertirlos a archivos parquet, como se puede ver el el archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/documentacion/ETL.ipynb">ETL</a> que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/documentacion">documentacion</a>
+<h3 style="text-align: left; border: none;">Se toman los 3 archivos JSON que nos fueron provistos, devido al tamaño y la complejidad de estos, lo siguiente fue convertirlos a archivos parquet, como se puede ver el el archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/documentacion/ETL.ipynb">ETL</a> que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/documentacion">analisis</a>
 <br>
 </h3>
 <p align='center'>
@@ -46,7 +46,7 @@ Vamos a desarrollar este informe en los <b>4 pasos mas importantes del desarroll
 Como se pudo ver en el <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/documentacion/ETL.ipynb">ETL</a>  de ahi creamos 3 archivos parquet, luego estos los convertimos en un archivo llamado df_merge.parquet y developer.parquet estos los almacenamos en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/data">data</a>, que son consumidos por las funciones y por el modelo de entrenamiento como vamos a pasar a mostrar luego.
 
 <p style="text-align: left; border: none;">
-<h3>Se hace un informe <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/documentacion/EDA.ipynb">EDA</a>, que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/documentacion">documentacion</a>, tomando cada uno de los datasets provistos y analizando las variables de cada uno de los Endpoints, estos son:</h3><br>
+<h3>Se hace un informe <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/documentacion/EDA.ipynb">EDA</a>, que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/documentacion">analisis</a>, tomando cada uno de los datasets provistos y analizando las variables de cada uno de los Endpoints, estos son:</h3><br>
 <b>Developer</b> Nos muestra la cantidad de items y porcentaje de contenido Free por año según empresa desarrolladora.<br><br>
 <b>UserData</b> Observa el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año de lanzamiento.<br><br>
 <b>User For Genre</b> Observa el dinero gastado por el usuario, el porcentaje de recomendación y la cantidad de items que tiene el mismo. <br><br>
@@ -67,8 +67,13 @@ Para lograr los analisis, tomamos las columnas pertinentes que sean necesarias p
     Tercer Paso
 </h2>
 <h1>Creamos un entorno virtual en FastApi</h1>
-<h4>La aplicacion para el deploy elegida es FastApi, donde primero en un entorno virtual local, hacemos las comprobaciones de que las funciones ejecuten de manera correcta</h4>
+<h4>La aplicacion para el deploy elegida es FastApi, donde primero en un entorno virtual local, hacemos las comprobaciones de que las funciones ejecuten de manera correcta</h4><br>
 </p>
+<p align='center'>
+<a href="https://marcelo-yuba-pi1.onrender.com/docs"><img alt="Fastapi" src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" style="display: inline-block; width: 200px;"></a>
+</p>
+<p align='center'>Click en la imagen para ir al deploy en Render</p>
+
 <p align='center'>
 <img src ="scr\fastapi.jpg" style="width: 60%;">
 </p>
@@ -97,3 +102,20 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 <p>
 <h1>Creamos un web service en Render</h1>
 </p>
+<h4>La aplicacion para el deploy en la nube elegida es Render, lugar donde se pueden hacer las consultas definitivas</h4><br>
+<p align='center'>
+<a href="https://marcelo-yuba-pi1.onrender.com"><img alt="Fastapi" src="https://intellyx.com/wp-content/uploads/2019/08/Render-cloud-intellyx-BC-logo.png" style="display: inline-block; width: 300px;"></a>
+</p>
+<p align='center'>Click en la imagen para ir al deploy en Render</p>
+<p align='center'>
+<img src ="scr\render.jpg" style="width: 60%;">
+</p>
+<h4>Se crea una pagina de inicio donde se puede ingrear a la API o a este repositorio</h4><br>
+<p align='center'>
+<img src ="scr\home.jpg" style="width: 60%;">
+</p>
+ <h2 style="text-align: Left; border: none;">
+    Quinto Paso
+</h2>
+<p>
+<h1>Creamos un video explicando el funcionamiento del deploy y el proyecto en si</h1>
