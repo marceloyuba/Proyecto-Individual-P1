@@ -123,3 +123,22 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 <a href="https://drive.google.com/drive/folders/11dskMeZRd7JQwkoNWF0th1oVGVPE9L4B?usp=drive_link"><img alt="Fastapi" src="https://logowik.com/content/uploads/images/google-drive-new9328.logowik.com.webp" style="display: inline-block; width: 300px;"></a>
 </p>
 <p align='center'>Click en la imagen para ir al drive del video</p>
+
+ <h2 style="text-align: Left; border: none;">
+    Aclaraciones
+</h2>
+<p>
+<h1>Explicacion GitHub</h1>
+<p align='center'>
+<img src ="scr\github.jpg" style="width: 60%;">
+</p>
+<p style="text-align: left; border: none;">
+<h3>Como vemos la primer carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/documentacion">analisis</a>, contiene los informes <b>EDA<b> y <b>ETL<b> </h3>
+<h3>La segunda carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/data">data</a>, contiene los datasets necearios para el funcionamiento de la API</h3>
+<h3>La tercer carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/scr">scr</a>, contiene las imagenes usadas en este README</h3>
+<b>.gitignore</b> es un archivo de uso interno de Git que nos permite usar archivos en nuestra computadora, pero, ser ignorados para subir al repositorio (git push), ya que lo que tenemos local funciona en sincronia con lo que se encuentra online<br><br>
+<b>Functions.py</b> Es el archivo que contiene las funciones para las consultas, se mantiene en el main para que pueda operar de mejor manera la API.<br><br>
+<b>README.md</b> Es el archivo que estamos leyendo en este momento, este tipo de archivo sirve para hacer explicaiones y presentaciones del repositorio. <br><br>
+<b>main.py</b> Es el archivo que hace que FastApi para pueda funcionar, donde colecciona las funciones y hace el deploy. <br><br>
+<b>render.yaml</b> Archivo de procesamiento de render que hace la conexion entre el repositorio y la nube. <br><br>
+<b>requirements.txt</b> Carga las librerias de python y FastApi necearias para poder correr el deploy en Render  .<br><br>
