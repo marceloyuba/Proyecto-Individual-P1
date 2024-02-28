@@ -45,7 +45,7 @@ Vamos a desarrollar este informe en los <b>4 pasos más importantes del desarrol
 <p align='center'>
 <img src ="scr\archivos.jpg">
 <p>
-<h3 style="text-align: left; border: none;">Se toman los 3 archivos JSON que nos fueron provistos, devido al tamaño y la complejidad de estos, lo siguiente fue convertirlos a archivos parquet, como se puede ver el el archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/documentacion/ETL.ipynb">ETL</a> que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/documentacion">analisis</a>
+<h3 style="text-align: left; border: none;">Se toman los 3 archivos JSON que nos fueron provistos, devido al tamaño y la complejidad de estos, lo siguiente fue convertirlos a archivos parquet, como se puede ver el el archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/analisis/ETL.ipynb">ETL</a> que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/analisis">analisis</a>
 <br>
 </h3>
 <p align='center'>
@@ -53,11 +53,11 @@ Vamos a desarrollar este informe en los <b>4 pasos más importantes del desarrol
 <p>
 
 
-Como se pudo ver en el <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/documentacion/ETL.ipynb">ETL</a>  de ahi creamos 3 archivos parquet, luego estos los convertimos en un archivo llamado df_merge.parquet y developer.parquet estos los almacenamos en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/data">data</a>, que son consumidos por las funciones y por el modelo de entrenamiento como vamos a pasar a mostrar luego.
+Como se pudo ver en el <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/analisis/ETL.ipynb">ETL</a>  de ahi creamos 3 archivos parquet, luego estos los convertimos en un archivo llamado df_merge.parquet y developer.parquet estos los almacenamos en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/data">data</a>, que son consumidos por las funciones y por el modelo de entrenamiento como vamos a pasar a mostrar luego.
 
 
 <p style="text-align: left; border: none;">
-<h3>Se hace un informe <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/documentacion/EDA.ipynb">EDA</a>, que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/documentacion">analisis</a>, tomando cada uno de los datasets provistos y analizando las variables de cada uno de los Endpoints, estos son:</h3><br>
+<h3>Se hace un informe <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/analisis/EDA.ipynb">EDA</a>, que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/analisis">analisis</a>, tomando cada uno de los datasets provistos y analizando las variables de cada uno de los Endpoints, estos son:</h3><br>
 <b>Developer<b> Nos muestra la cantidad de ítems y porcentaje de contenido Free por año según empresa desarrolladora.<br><br>
 <b>UserData<b> Observa el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año de lanzamiento.<br><br>
 <b>User For Genre<b> Observa el dinero gastado por el usuario, el porcentaje de recomendación y la cantidad de ítems que tiene el mismo. <br><br>
@@ -151,12 +151,12 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 <img src ="scr\github.jpg" style="width: 60%;">
 </p>
 <p style="text-align: left; border: none;">
-<h3>Como vemos la primer carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/documentacion">analisis</a>, contiene los informes <b>EDA<b> y <b>ETL<b> </h3>
+<h3>Como vemos la primer carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/analisis">analisis</a>, contiene los informes <b>EDA<b> y <b>ETL<b> </h3>
 <h3>La segunda carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/data">data</a>, contiene los datasets necearios para el funcionamiento de la API</h3>
 <h3>La tercer carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/scr">scr</a>, contiene las imagenes usadas en este README</h3>
-<b>.gitignore</b> es un archivo de uso interno de Git que nos permite usar archivos en nuestra computadora, pero, ser ignorados para subir al repositorio (git push), ya que lo que tenemos local funciona en sincronía con lo que se encuentra online<br><br>
-<b>Functions.py</b> Es el archivo que contiene las funciones para las consultas, se mantiene en el main para que pueda operar de mejor manera la API.<br><br>
-<b>README.md</b> Es el archivo que estamos leyendo en este momento, este tipo de archivo sirve para hacer explicaciones y presentaciones del repositorio. <br><br>
-<b>main.py</b> Es el archivo que hace que FastApi para pueda funcionar, donde colecciona las funciones y hace el deploy. <br><br>
-<b>render.yaml</b> Archivo de procesamiento de render que hace la conexión entre el repositorio y la nube. <br><br>
-<b>requirements.txt</b> Carga las librerías de python y FastApi necesarias para poder correr el deploy en Render  .<br><br>
+<a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/.gitignore"><b>.gitignore</b> </a> es un archivo de uso interno de Git que nos permite usar archivos en nuestra computadora, pero, ser ignorados para subir al repositorio (git push), ya que lo que tenemos local funciona en sincronía con lo que se encuentra online<br><br>
+<a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/Functions.py"><b>Functions.py</b></a> Es el archivo que contiene las funciones para las consultas, se mantiene en el main para que pueda operar de mejor manera la API.<br><br>
+<a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/README.md"><b>README.md</b></a> Es el archivo que estamos leyendo en este momento, este tipo de archivo sirve para hacer explicaciones y presentaciones del repositorio. <br><br>
+<a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/main.py">main.py</a> Es el archivo que hace que FastApi para pueda funcionar, donde colecciona las funciones y hace el deploy. <br><br>
+<a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/render.yaml"><b>render.yaml</b></a> Archivo de procesamiento de render que hace la conexión entre el repositorio y la nube. <br><br>
+<a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/requirements.txt"><b>requirements.txt</b></a> Carga las librerías de python y FastApi necesarias para poder correr el deploy en Render  .<br><br>
