@@ -45,36 +45,36 @@ Vamos a desarrollar este informe en los <b>4 pasos más importantes del desarrol
 <p align='center'>
 <img src ="scr\archivos.jpg">
 <p>
-<h3 style="text-align: left; border: none;">Se toman los 3 archivos JSON que nos fueron provistos, devido al tamaño y la complejidad de estos, lo siguiente fue convertirlos a archivos parquet, como se puede ver el el archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/analisis/ETL.ipynb">ETL</a> que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/analisis">analisis</a>
+<h3 style="text-align: left; border: none;">Se toman los 3 archivos JSON que nos fueron provistos, debido al tamaño y la complejidad de estos, lo siguiente fue convertirlos a archivos parquet, como se puede ver en el archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/analisis/ETL.ipynb">ETL</a> que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/analisis">analisis</a>
 <br>
 </h3>
 <p align='center'>
 <img src ="scr\archivos2.jpg">
 <p>
 
-
+<h3>
 Como se pudo ver en el <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/analisis/ETL.ipynb">ETL</a>  de ahi creamos 3 archivos parquet, luego estos los convertimos en un archivo llamado df_merge.parquet y developer.parquet estos los almacenamos en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/data">data</a>, que son consumidos por las funciones y por el modelo de entrenamiento como vamos a pasar a mostrar luego.
-
+</h3>
 
 <p style="text-align: left; border: none;">
 <h3>Se hace un informe <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/analisis/EDA.ipynb">EDA</a>, que se encuentra en la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/analisis">analisis</a>, tomando cada uno de los datasets provistos y analizando las variables de cada uno de los Endpoints, estos son:</h3><br>
-<b>Developer<b> Nos muestra la cantidad de ítems y porcentaje de contenido Free por año según empresa desarrolladora.<br><br>
-<b>UserData<b> Observa el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año de lanzamiento.<br><br>
-<b>User For Genre<b> Observa el dinero gastado por el usuario, el porcentaje de recomendación y la cantidad de ítems que tiene el mismo. <br><br>
-<b>Best Developer Year<b> Muestra el top 3 de desarrolladores con juegos MÁS recomendados por usuarios para el año dado. <br><br>
-<b>Developer Reviews Analysis<b> Según el desarrollador, se devuelve un diccionario con el nombre del desarrollador como llave
+<h3>Developer:</h3> Nos muestra la cantidad de ítems y porcentaje de contenido Free por año según empresa desarrolladora.<br>
+<h3>UserData:</h3> Observa el usuario que acumula más horas jugadas para el género dado y una lista de la acumulación de horas jugadas por año de lanzamiento.<br><br>
+<h3>User For Genre:</h3> Observa el dinero gastado por el usuario, el porcentaje de recomendación y la cantidad de ítems que tiene el mismo. <br><br>
+<h3>Best Developer Year:</h3> Muestra el top 3 de desarrolladores con juegos MÁS recomendados por usuarios para el año dado. <br><br>
+<h3>Developer Reviews Analysis:</h3> Según el desarrollador, se devuelve un diccionario con el nombre del desarrollador como llave
 y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados
 con un análisis de sentimiento como valor positivo o negativo. <br><br>
-<b>Recomendación<b> Es el modelo de Machine Learning que observa el dinero gastado por el usuario, el porcentaje de recomendación y la cantidad de ítems que tiene el mismo.
+<h3>Recomendación:</h3> Es el modelo de Machine Learning que observa el dinero gastado por el usuario, el porcentaje de recomendación y la cantidad de ítems que tiene el mismo.
 <br><br>
-Para lograr los analisis, tomamos las columnas pertinentes que sean necesarias para la creacion de funciones y las analizamos individualmente y a efectos de poder ejecutar los Endpoints, se crean <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/Functions.py">funciones</a> para poder consumir los dataset y obtener las respuestas esperadas<br><br>
+<h3>Para lograr los analisis, tomamos las columnas pertinentes que sean necesarias para la creacion de funciones y las analizamos individualmente y a efectos de poder ejecutar los Endpoints, se crean <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/Functions.py">funciones</a> para poder consumir los dataset y obtener las respuestas esperadas.<br><br></h3>
 
 
  <h2 style="text-align: Left; border: none;">
     Segundo Paso
 </h2>
 <h1>Creamos un entorno virtual en FastApi</h1>
-<h4>La aplicación para el deploy elegida es FastApi, donde primero en un entorno virtual local, hacemos las comprobaciones de que las funciones ejecuten de manera correcta</h4><br>
+<h4>La aplicación para el deploy elegida es FastApi, donde primero en un entorno virtual local, hacemos las comprobaciones de que las funciones ejecuten de manera correcta.</h4><br>
 </p>
 <p align='center'>
 <a href="https://marcelo-yuba-pi1.onrender.com/docs"><img alt="Fastapi" src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" style="display: inline-block; width: 200px;"></a>
@@ -98,7 +98,7 @@ Además cada vez que hacemos un deploy en render si falla, cancela el mismo, lo 
 En este se cargan los archivos necesarios para correr la API, es una manera más ordenada de trabajar y optimizar recursos.
 </p>
 <p>
-Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/main.py">main.py</a> que es el que maneja el entorno de FastApi, este importa las funciones de <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/Functions.py">Functions.py</a> donde en este archivo hacemos las consultas unicamente, dejando mas simple de leer el archivo
+Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/main.py">main.py</a> que es el que maneja el entorno de FastApi, este importa las funciones de <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/Functions.py">Functions.py</a> donde en este archivo hacemos las consultas únicamente, dejando mas simple de leer el archivo.
 </p>
 
 
@@ -113,7 +113,7 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 <p>
 <h1>Creamos un web service en Render</h1>
 </p>
-<h4>La aplicación para el deploy en la nube elegida es Render, lugar donde se pueden hacer las consultas definitivas</h4><br>
+<h4>La aplicación para el deploy en la nube elegida es Render, lugar donde se pueden hacer las consultas definitivas.</h4><br>
 <p align='center'>
 <a href="https://marcelo-yuba-pi1.onrender.com"><img alt="Fastapi" src="https://intellyx.com/wp-content/uploads/2019/08/Render-cloud-intellyx-BC-logo.png" style="display: inline-block; width: 300px;"></a>
 </p>
@@ -160,3 +160,16 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/main.py">main.py</a> Es el archivo que hace que FastApi para pueda funcionar, donde colecciona las funciones y hace el deploy. <br><br>
 <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/render.yaml"><b>render.yaml</b></a> Archivo de procesamiento de render que hace la conexión entre el repositorio y la nube. <br><br>
 <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/blob/main/requirements.txt"><b>requirements.txt</b></a> Carga las librerías de python y FastApi necesarias para poder correr el deploy en Render  .<br><br>
+
+<h1>Datasets</h1>
+<h3>
+Como vemos dentro de la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/data">data</a>, los tres datasets que se usan para el funcionamiento de esta API son:
+</h3>
+<p align='center'>
+<img src ="scr\dataset.jpg" style="width: 30%;">
+</p>
+<h3>datos_entrenamiento.pkl:</h3> Dataset que contiene en formato comprimido los datos del modelo de entrenamiento para poder ser consumidos por el Endpoint de Recomendacion.<br>
+<h3>developer.parquet:</h3> Dataset que se creo para el uso del Endpoint, Developer, por problemas a la hora de la lectura del dataset df_merge.<br>
+<h3>df_merge.parquet:</h3> Dataset creado desde el merge de los 3 dataset individuales, es consumido por el resto de los Endpoints. <br>
+
+<h3>Estos archivos no pueden ser vistos en Github, ya que el visualizador no interpreta este tipo de archivos.</h3>
