@@ -166,7 +166,7 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 Como vemos dentro de la carpeta <a href="https://github.com/marceloyuba/Proyecto-Individual-P1/tree/main/data">data</a>, los tres datasets que se usan para el funcionamiento de esta API son:
 </h3>
 <p align='center'>
-<img src ="scr\dataset.jpg" style="width: 30%;">
+<img src ="scr\dataset.jpg">
 </p>
 <h3>datos_entrenamiento.pkl:</h3> Dataset que contiene en formato comprimido los datos del modelo de entrenamiento para poder ser consumidos por el Endpoint de Recomendacion.<br>
 <h3>developer.parquet:</h3> Dataset que se creo para el uso del Endpoint, Developer, por problemas a la hora de la lectura del dataset df_merge.<br>
