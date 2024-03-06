@@ -114,6 +114,7 @@ Se crea un archivo <a href="https://github.com/marceloyuba/Proyecto-Individual-P
 <h1>Creamos un web service en Render</h1>
 </p>
 <h4>La aplicación para el deploy en la nube elegida es Render, lugar donde se pueden hacer las consultas definitivas.</h4><br>
+<h3>"Le toma tiempo cargar, asi que hay que tener paciencia"</h3>
 <p align='center'>
 <a href="https://marcelo-yuba-pi1.onrender.com"><img alt="Fastapi" src="https://intellyx.com/wp-content/uploads/2019/08/Render-cloud-intellyx-BC-logo.png" style="display: inline-block; width: 300px;"></a>
 </p>
